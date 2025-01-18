@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% include 'trolley_modal.html' %}
+{% block content %}
+
+
+<div class="shop-items-container">
+    <div class="shop-items">
+        {% for product in products %}
+        <div class="shop-item" data-id="1">
+            <img src="{{product.image.url}}" alt="{{product.name}}" class="shop-item-img">
+            <div class="shop-item-content">
+                <h2 class="shop-item-title">{{ product.name }}</h2>
+                <p class="shop-item-price">£{{ product.price }}</p>
+                <button class="add-to-cart">Add</button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
